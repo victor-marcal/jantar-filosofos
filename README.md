@@ -1,4 +1,4 @@
-# 🍽️ Jantar dos Filósofos
+# Jantar dos Filósofos
 
 O Problema do Jantar dos Filósofos é um clássico exercício de concorrência proposto por E. W. Dijkstra. Consiste em cinco filósofos sentados em uma mesa redonda, alternando entre pensar e comer. Entre cada filósofo há um garfo compartilhado. Para comer, um filósofo precisa de dois garfos: o da sua esquerda e o da sua direita.
 
@@ -7,7 +7,7 @@ Este problema ilustra a necessidade de sincronização em sistemas concorrentes,
 - **Deadlock:** Todos os filósofos pegam um garfo e esperam infinitamente pelo segundo, impedindo o avanço de qualquer um;
 - **Starvation:** Um ou mais filósofos nunca conseguem os dois garfos, sendo constantemente preteridos.
 
-## 💡 A Solução Implementada
+## A Solução Implementada
 
 Esta implementação em C, utilizando Pthreads e Semáforos, resolve o problema de concorrência com base na estratégia de controle de estados. Um filósofo só pode começar a comer se ambos os vizinhos não estiverem comendo.
 
@@ -35,7 +35,7 @@ O estado de cada filósofo é mantido no vetor **state[N]**:
 | `put_forks(i)` | Entra na região crítica, muda o estado para **THINKING**, e chama `test(LEFT)` e `test(RIGHT)` para verificar se os vizinhos podem comer agora. | Permite que os vizinhos bloqueados sejam liberados assim que os garfos são devolvidos. |
 
 
-## ⚙️ Como Compilar e Executar
+## Como Compilar e Executar
 
 Este projeto requer o compilador GCC e a biblioteca Pthreads.
 
